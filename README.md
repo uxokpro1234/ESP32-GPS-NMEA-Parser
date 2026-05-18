@@ -36,6 +36,7 @@ No external GPS libraries used. PURE MANUAL NMEA parsing.
 - GPS module
   - NEO-6M
   - NEO-M8N
+  - NEO-M9N
   - ATGM336H
   - Basically anything outputting NMEA over UART
 
