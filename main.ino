@@ -28,7 +28,7 @@ GPSInfo gps;
 Satellite satellites[32];  // max 32 satellites
 int satCount = 0;
 
-// --- NMEA helpers ---
+// NMEA helpers
 double nmeaToDecimal(const String &val, char dir) {
     if (val.length() < 4) return 0.0;
     int dot = val.indexOf('.');
@@ -55,7 +55,7 @@ void splitNMEA(const String &line, String fields[], int maxFields) {
     fields[field] = line.substring(start);
 }
 
-// --- Parse functions ---
+// Parse functions
 void parseGGA(const String &line) {
     String fields[15];
     splitNMEA(line, fields, 15);
@@ -106,11 +106,7 @@ void parseGSV(const String &line) {
 
         Serial.println("Satellites in view:");
         for (int i = 0; i < satCount; i++) {
-            Serial.printf("PRN:%d Elev:%d Az:%d SNR:%d\n",
-                          satellites[i].prn,
-                          satellites[i].elevation,
-                          satellites[i].azimuth,
-                          satellites[i].snr);
+            Serial.printf("PRN:%d Elev:%d Az:%d SNR:%d\n", satellites[i].prn, satellites[i].elevation, satellites[i].azimuth, satellites[i].snr);
         }
         Serial.println("---");
 
@@ -123,11 +119,7 @@ void parseGSV(const String &line) {
         SerialBT.println("Fix Status: " + String(gps.fixStatus));
         SerialBT.println("Satellites used: " + String(gps.satellitesUsed));
         for (int i = 0; i < satCount; i++) {
-            SerialBT.printf("PRN:%d Elev:%d Az:%d SNR:%d\n",
-                            satellites[i].prn,
-                            satellites[i].elevation,
-                            satellites[i].azimuth,
-                            satellites[i].snr);
+            SerialBT.printf("PRN:%d Elev:%d Az:%d SNR:%d\n", satellites[i].prn, satellites[i].elevation, satellites[i].azimuth, satellites[i].snr);
         }
         SerialBT.println("---");
 
@@ -135,7 +127,7 @@ void parseGSV(const String &line) {
     }
 }
 
-// --- Setup & Loop ---
+// Setup & Loop
 void setup() {
     Serial.begin(115200);
     SerialBT.begin("ESP32_GPS");
