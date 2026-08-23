@@ -1,6 +1,7 @@
 # ESP32-GPS-Bluetooth
 
 ESP32 GPS telemetry parser using UART + Bluetooth Classic.
+I useed neom9n. You can use whatever.
 
 Reads raw NMEA data from a GPS module, parses location/satellite information, and streams it to:
 
