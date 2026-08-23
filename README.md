@@ -34,11 +34,11 @@ No external GPS libraries used. PURE MANUAL NMEA parsing.
 
 - ESP32
 - GPS module
-  - NEO-6M
-  - NEO-M8N
-  - NEO-M9N
-  - ATGM336H
-  - Basically anything outputting NMEA over UART
+- NEO-6M
+- NEO-M8N
+- NEO-M9N
+- ATGM336H
+- Basically anything outputting NMEA over UART
 
 ---
 
@@ -63,7 +63,7 @@ GPSSerial.begin(38400, SERIAL_8N1, RXD2, TXD2);
 ```
 
 ## Example Output
-```
+```cmd
 --- GPS Info ---
 Latitude: 40.712776
 Longitude: -74.005974
